@@ -21,7 +21,9 @@ class Chronometer {
     return Math.floor((this.currentTime / 100) % 60);
   }
 
-  getCentiseconds() {}
+  getCentiseconds() {
+    return this.currentTime % 100;
+  }
 
   computeTwoDigitNumber(value) {
     let twoDigit = value.toString();
@@ -44,6 +46,7 @@ class Chronometer {
       this.computeTwoDigitNumber(this.getMinutes()) +
       ":" +
       this.computeTwoDigitNumber(this.getSeconds()) +
+      "." +
       this.computeTwoDigitNumber(this.getCentiseconds())
     );
   }
